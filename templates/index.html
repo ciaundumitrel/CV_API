@@ -1,0 +1,105 @@
+<html>
+    <link rel="stylesheet" href = "{{url_for('static', filename='style.css') }}">
+    <h3>{{data}}</h3>
+    <div class="split left top">
+      <div class="centered">
+        <h2 class="education_title">Education</h2>
+        <h3 class="education_instruction">Click here to show information about my schooling.</h3>
+        <div class="education_text">
+           <ul  style="list-style: none; text-align: left;" class="list">
+
+                    {% for school in content.education%}
+                <li>
+
+                <p>{{school.school}}<br>{{school.profile}}</p>
+                <p> {{school.begin}} - {{school.end}} </p>
+                    </li>
+
+            {% endfor %}
+
+            </ul>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="split right top">
+      <div class="centered">
+        <h2>Professional Experience</h2>
+        <p class="professional_instruction">Click here to show information about my experience.</p>
+          <div class="experience_text">
+              <ul  style="list-style: none; text-align: left;" class="list">
+
+            {% for experience in content.experience%}
+                  <li>
+
+                    <p>{{experience.jobTitle}} {{experience.company}} <br>{{experience.begin}} - {{experience.end}} </p>
+                      <ul>
+
+                        {% for details in experience.description %}
+                            <li>{{details}}</li>
+                        {% endfor %}
+                      </ul>
+
+                    </li>
+
+            {% endfor %}
+              </ul>
+        </div>
+      </div>
+    </div>
+
+   <div class="split left bot">
+      <div class="centered">
+        <h2>Skills</h2>
+        <p class="skill_instruction">Click here to show information about my skills.</p>
+          <div class="skill_text">
+              <ul  style="list-style: none; text-align: left;" class="list">
+
+
+          {% for skill in content.skills%}
+            <li> {{skill}}</li>
+          {% endfor %}
+
+            </ul>
+
+          </div>
+      </div>
+    </div>
+
+    <div class="split right bot">
+      <div class="centered">
+        <h2>Projects</h2>
+        <p class="projects_instruction">Click here to show information about my projects.</p>
+          <div class="projects_text">
+              <ul  style="list-style: none; text-align: left;" class="list">
+
+
+            {% for project in content.projects%}
+                  <li>
+
+                    <p>{{project.name}} {{project.description}}</p>
+                    {% for language in project.languages %}
+                        {{language}}
+                    {% endfor %}
+                    </li>
+
+            {% endfor %}
+
+              </ul>
+
+          </div>
+      </div>
+    </div>
+
+    <div class="central_widget">
+        <div class="centered">
+        <h2>{{content.personal.name}}</h2>
+        <p class="personal_instructions">Click here to show information about myself.</p>
+        <p class="personal_info">  {{content.personal.email}} <br> {{content.personal.phone}}<br> <a target="_blank" href="{{content.personal.links}}"> Linkedin</a><br> {{content.personal.address}}</p>
+        </div>
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="{{url_for('static', filename='index.js') }}" > </script>
+</html>

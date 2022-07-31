@@ -1,0 +1,104 @@
+body{
+    background-color:grey;
+}
+p{
+    font-weight: 1000;
+}
+h1{
+    font-size: 3vw;
+}
+h2{
+    font-size: 1.5vw;
+    font-family: 'Raleway',sans-serif;
+    font-weight: 800;
+     line-height: 72px;
+      margin: 0 0 24px;
+      text-transform: uppercase;
+
+}
+h3{
+    font-size:1vw;
+}
+/* Split the screen in half */
+.split {
+  height: 50%;
+  width: 50%;
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  border: 1px solid black;
+  text-shadow: 0 0 2px black;
+}
+
+/* Control the left side */
+.top.left {
+  top:0;
+  left: 0;
+  background-color: #CA965C;
+  color:white;
+
+}
+
+/* Control the right side */
+.top.right {
+  top:0;
+  right: 0;
+  background-color: #876445;
+  color:white;
+
+}
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+    text-shadow: 0 0 2px black;
+
+}
+
+.bot.right{
+    right: 0;
+    bottom: 0;
+    background-color:#EEC373;
+    color: black;
+}
+.bot.right.h2{
+    top:50%;
+}
+.bot.left{
+    left:0;
+    bottom: 0;
+    background-color:#F4DFBA;
+    color: black;
+}
+.education_text{
+    display:none;
+}
+.experience_text{
+    display:none;
+}
+.projects_text{
+    display:none;
+}
+.skill_text{
+    display:none;
+}
+.personal_info{
+    display: none;
+}
+
+.central_widget{
+    border: 1px solid black;
+    border-radius: 80%;
+    top: 30%;
+    left: 30%;
+    width: 40%;
+    height: 40%;
+    background-color:#DACC96;
+    position: fixed;
+    text-align: center;
+    z-index:1;
+    font-size: 1vw;
+    text-shadow: 0 0 1px black;
+}
